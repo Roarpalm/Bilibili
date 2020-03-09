@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 import time, os, sys, you_get
 
-def browser(ip_url):
+def browser(up_url):
     chrome_opt = Options()
     prefs = {"profile.managed_default_content_settings.images":2}
     chrome_opt.add_experimental_option("prefs",prefs) # 不加载图片
