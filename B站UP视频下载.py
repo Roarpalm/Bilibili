@@ -44,5 +44,6 @@ def download(path, url):
 if __name__ == "__main__":
     # UP个人空间视频url
     # 日食记 = 'https://space.bilibili.com/8960728/video'
-    up_url = input('请输入UP个人视频空间url')
+    up = input('请输入UP数字ID：')
+    up_url = f'https://space.bilibili.com/{up}/video'
     browser(up_url)
