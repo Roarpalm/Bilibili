@@ -8,8 +8,8 @@ import time
 import base64
 import random
 
-username = '18002217314'
-password = 'LiZhuofu88334273'
+username = ''
+password = ''
 driver = webdriver.Chrome()
 
 
