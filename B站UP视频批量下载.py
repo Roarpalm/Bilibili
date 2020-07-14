@@ -46,13 +46,6 @@ def download(path, url):
     sys.argv = ['you-get', '-o', path, url]
     you_get.main()
 
-def video_download(url):
-    '''单独视频下载'''
-    url = BV_to_AV(url)
-    path = os.path.abspath('.')
-    sys.argv = ['you-get', '-o', path, url]
-    you_get.main()
-
 def BV_to_AV(url):
     '''BV转AV'''
     api = 'http://api.bilibili.com/x/web-interface/view?bvid='
@@ -60,17 +53,11 @@ def BV_to_AV(url):
     response = requests.get(url)
     html = response.content.decode('utf-8')
     data = json.loads(html)
-    aid = data['data']['aid']
-    return aid
-
+    avid = data['data']['aid']
+    return avid
     
-
 if __name__ == "__main__":
     # 下载UP所有视频
     up = input('请输入UP数字ID：') # 我的空间: 9174628
     up_url = f'https://space.bilibili.com/{up}/video'
     browser(up_url)
-
-    # 单独下载视频
-    #url = 'https://www.bilibili.com/video/BV1XJ411x7yz'
-    #video_download(url)
